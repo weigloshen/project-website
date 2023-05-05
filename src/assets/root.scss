@@ -1,0 +1,22 @@
+/*-----------------------------------*\
+  # 全局变量注入
+\*-----------------------------------*/
+:root {
+  --color-white: #fff;
+  --color-black: #0e153a;
+  --color-primary-light: #8c97ff;
+  --color-primary: #4052ff;
+  --color-primary-dark: #263199;
+  --color-text: #0e153a;
+  --color-gray:#8f8f8f;
+  --shadow-color: rgba(0, 0, 0, 0.2);
+  --bg-color: #fff;
+}
+.dark {
+  --shadow-color: rgba(0, 0, 0, 0.8);
+  --color-primary-light: #ffa3b5;
+  --color-primary: #ff6584;
+  --color-primary-dark: #993d4f;
+  --bg-color: #333;
+  --color-text: #f1ead5;
+}

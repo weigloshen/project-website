@@ -1,0 +1,35 @@
+.about {
+  display: flex;
+  width: 100%;
+
+  &-left {
+    flex: 1 1 0;
+    align-self: center;
+    text-align: center;
+    img {
+      width: 100%;
+    }
+  }
+  &-right {
+    flex: 1 1 0;
+    align-self: center;
+    text-align: center;
+    &__content {
+      display: inline-block;
+
+      h2 {
+        margin: 2rem 0;
+        font-size: 3.36rem;
+        letter-spacing: 0.3rem;
+      }
+      p {
+        font-size: 1.6rem;
+        letter-spacing: 0.1rem;
+        line-height: 2.6rem;
+      }
+    }
+  }
+}
+h2 > span {
+  color: var(--color-primary);
+}

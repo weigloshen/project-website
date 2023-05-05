@@ -1,0 +1,113 @@
+@mixin slideAnimation($direction, $delay) {
+  position: relative;
+  animation: slide#{$direction} 1s ease-out backwards;
+  animation-delay: $delay;
+}
+
+.slideBottom {
+  @include slideAnimation(Bottom, 0.5s);
+}
+
+.slideTop {
+  @include slideAnimation(Top, 1s);
+}
+
+.slideLeft {
+  @include slideAnimation(Left, 0.4s);
+}
+
+.slideRight {
+  @include slideAnimation(Right, 0.6s);
+}
+
+.fadeIn {
+  animation: fadeIn 1s ease-out backwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes slideBottom {
+  0% {
+    bottom: 5rem;
+    opacity: 0;
+  }
+  20% {
+    bottom: 3rem;
+    opacity: 0.3;
+  }
+  60% {
+    bottom: 1rem;
+    opacity: 0.7;
+  }
+  100% {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+@keyframes slideTop {
+  0% {
+    top: 5rem;
+    opacity: 0;
+  }
+  20% {
+    top: 3rem;
+    opacity: 0.3;
+  }
+  60% {
+    top: 1rem;
+    opacity: 0.7;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+  }
+}
+@keyframes slideLeft {
+  0% {
+    left: 5rem;
+    opacity: 0;
+  }
+  20% {
+    left: 3rem;
+    opacity: 0.3;
+  }
+  60% {
+    left: 1rem;
+    opacity: 0.7;
+  }
+  100% {
+    left: 0;
+    opacity: 1;
+  }
+}
+@keyframes slideRight {
+  0% {
+    right: 5rem;
+    opacity: 0;
+  }
+  20% {
+    right: 3rem;
+    opacity: 0.3;
+  }
+  60% {
+    right: 1rem;
+    opacity: 0.7;
+  }
+  100% {
+    right: 0;
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.3;
+  }
+  60% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}

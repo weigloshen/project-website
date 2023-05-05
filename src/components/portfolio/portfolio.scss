@@ -1,0 +1,121 @@
+.portfolio {
+  h2 {
+    text-align: center;
+    letter-spacing: 0.1rem;
+    font-size: 6.2rem;
+    margin-bottom: 4.4rem;
+  }
+  &-teachers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 3.5rem;
+
+    .teacher {
+      display: flex;
+      flex-direction: column;
+      background: var(--bg-color);
+      border: 1px solid var(--bg-color);
+      border-radius: 0.6rem;
+      box-shadow: 0 0.2rem 0.5rem var(--shadow-color);
+      overflow: hidden;
+      transition: .3s ease-in-out;
+      &-card {
+        position: relative;
+        i {
+          display: inline-block;
+          width: 100%;
+          height: 68px;
+          background: url("https://randomuser.me/api/portraits/med/men/51.jpg")
+            no-repeat;
+          background-size: cover;
+          filter: blur(1rem);
+          z-index: -1;
+        }
+        & > img {
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+          top: 2rem;
+          border-radius: 50%;
+          border: 4px solid #e1e1e1;
+        }
+      }
+      &-content {
+        padding: 2.5rem 2rem;
+        font-size: 1.6rem;
+        span {
+          color: var(--color-gray);
+        }
+        h1 {
+          text-align: center;
+        }
+        ul {
+          display: flex;
+          flex-direction: column;
+          gap: 1.5rem;
+          margin: 1rem 0;
+          li {
+            display: flex;
+            align-items: center;
+            a {
+              margin-left: 2rem;
+              color: var(--color-text);
+              &:hover {
+                color: var(--color-gray);
+              }
+            }
+          }
+        }
+      }
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+}
+
+.languages {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  .imgs {
+    display: flex;
+    gap: 1rem;
+  }
+  .imgs a {
+    display: inline-block;
+    position: relative;
+    &::after {
+      content: attr(data-msg) " ";
+      position: absolute;
+      padding: 0.4rem 3.2rem;
+      font-size: 12px;
+      white-space: nowrap;
+      display: none;
+      left: -50%;
+      background-color: var(--color-text);
+      color: var(--bg-color);
+      border-radius: 0.3rem;
+      opacity: 0;
+      transition: transform 0.3s ease-in-out;
+    }
+    &:hover::after {
+      display: inline-block;
+      animation: slideDown 0.3s ease-in-out forwards;
+    }
+  }
+  img {
+    width: 40px;
+  }
+}
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    top: 0%;
+  }
+  100% {
+    opacity: 1;
+    top: -100%;
+  }
+}

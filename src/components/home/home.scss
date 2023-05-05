@@ -1,0 +1,90 @@
+.home {
+  padding-top: 6.8rem;
+  display: flex;
+  align-items: center;
+  &-left {
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+      font-size: 2rem;
+    }
+    .typed {
+      font-size: 4rem;
+      font-weight: 700;
+    }
+    .text {
+      font-size: 1.6rem;
+      width: 45rem;
+      margin-top: 3.5rem;
+      line-height: 2.2rem;
+      color: var(--color-gray);
+    }
+    &__icons {
+      display: flex;
+      height: 10.5rem;
+      align-items: center;
+      gap: 4rem;
+      a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: transparent;
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+        border: 0.2rem solid var(--color-primary);
+        box-shadow: 0 0.2rem 0.5rem var(--shadow-color);
+        color: var(--color-primary);
+        transition: 0.5s ease;
+        &:hover {
+          background: var(--color-primary-light);
+          color: var(--color-white);
+        }
+      }
+    }
+  }
+  &-right {
+    display: flex;
+    flex: 1 1 0;
+    justify-content: flex-end;
+    img {
+      height: calc(100vh - 9rem);
+    }
+  }
+}
+/*-----------------------------------*\
+  # 打字效果样式
+\*-----------------------------------*/
+.typed-cursor {
+  color: var(--color-primary);
+}
+/*-----------------------------------*\
+  #  定义雪花样式
+\*-----------------------------------*/
+.snowflake {
+  position: absolute;
+  background-color: transparent;
+  animation: snowflakes 10s linear infinite;
+  top: -3rem;
+}
+
+/*-----------------------------------*\
+  #   确定雪花的位置 random(100)生成100以内的数
+\*-----------------------------------*/
+@mixin snowflake-position($i) {
+  left: calc(#{$i * 10}% - #{$i * random(100)}px);
+}
+/*-----------------------------------*\
+  #  确定雪花的延迟 
+\*-----------------------------------*/
+@mixin snowflake-animation-delay($i) {
+  animation-delay: #{$i}s;
+}
+
+@for $i from 1 through 9 {
+  .snowflake:nth-child(#{$i}) {
+    @include snowflake-position($i);
+    @include snowflake-animation-delay(random(23) - $i);
+  }
+}
