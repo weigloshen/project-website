@@ -1,0 +1,32 @@
+
+<svg fill="none" viewBox="0 0 200 40" width="200" height="40" xmlns="http://www.w3.org/2000/svg">
+	<foreignObject width="100%" height="100%">
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			<style>
+           .logo {
+        display: inline-block;
+        position: relative;
+        border: 20px solid #47e2ce;
+        border-right: 20px solid transparent;
+        border-top-color: #57c39d;
+        border-radius: 50%;
+      }
+      .logo::after {
+        width: 0;
+        height: 0;
+        content: attr(data-title) " ";
+        position: absolute;
+        color:white;
+        font-size: 2.5rem;
+        top: -30px;
+        left: 16px;
+      }
+    </style>
+      <span class="logo" data-title="odeKids"></span>
+		</div>
+	</foreignObject>
+	
+</svg>
+
+
+
